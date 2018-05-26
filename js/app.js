@@ -41,39 +41,47 @@ document.addEventListener("DOMContentLoaded", function(event) {
     var i;
     var dots = document.getElementsByClassName("sliderMiniature");
 
+    // disable prev button if is at first image
     if (slideIndex <= 0) {
       prev[0].className += " notActive";
       slideIndex = 1;
       return;
     }
+    //reset disable btn
     prev[0].className = prev[0].className.replace("notActive", "");
+    // disable next button if is at last image
     if ((slideIndex-1) >= x.length) {
       next[0].className += " notActive";
       slideIndex = x.length;
       return;
     }
+    //reset disable btn
     next[0].className = next[0].className.replace("notActive", "");
 
-
+    // slide thumbnails gallery to front
     if ((slideIndex) > 6) {
       var toHide = (slideIndex - 6);
       for (var i = 0; i < toHide; i++) {
         dots[i].classList = ["sliderMiniature hide"];
       }
     }
-
+    // slide thumbnails gallery to back
     if ( ((slideIndex) <= (x.length - 6) && (dots[slideIndex-1]).classList.contains("hide") )) {
       dots[slideIndex-1].classList = ["sliderMiniature"];
     }
 
+    // hide all images in gallery
     for (i = 0; i < x.length; i++) {
        x[i].style.display = "none";
     }
+    // make all thumbnails foggy
     for (i = 0; i < dots.length; i++) {
        dots[i].className = dots[i].className.replace("opacityOff", "");
     }
 
+    // show just chosen image from gallery
     x[slideIndex-1].style.display = "block";
+    // unfog chosen thumbnail
     dots[slideIndex-1].className += " opacityOff";
   }
 
