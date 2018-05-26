@@ -55,6 +55,9 @@
   }
   .btn {
     background-color: transparent;
+    &:hover {
+      background-color: $first-color;
+    }
   }
   .indicator {
     opacity: 0.5;
@@ -99,4 +102,7 @@
 }
 .btn.notActive {
   opacity: 0.3;
+}
+.btn.notActive:hover {
+  background-color: transparent;
 }

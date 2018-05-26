@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
    slides[i].addEventListener("click", function(){
      var t = Array.prototype.slice.call(slides);
      currentDiv((t.indexOf(this))+1);
-
    })
   }
   next.addEventListener("click", function(){
@@ -33,31 +32,29 @@ document.addEventListener("DOMContentLoaded", function(event) {
   function nextDiv(n) {
     showDivs(slideIndex += n);
   }
-
   function showDivs(n) {
     var x = document.getElementsByClassName("mySlides");
-    var next = document.getElementsByClassName("nextBtn");
-    var prev = document.getElementsByClassName("prevBtn");
+    var next = document.querySelector(".nextBtn");
+    var prev = document.querySelector(".prevBtn");
     var i;
     var dots = document.getElementsByClassName("sliderMiniature");
 
     // disable prev button if is at first image
     if (slideIndex <= 0) {
-      prev[0].className += " notActive";
+      prev.className += " notActive";
       slideIndex = 1;
       return;
     }
     //reset disable btn
-    prev[0].className = prev[0].className.replace("notActive", "");
+    prev.className = prev.className.replace("notActive", "");
     // disable next button if is at last image
     if ((slideIndex-1) >= x.length) {
-      next[0].className += " notActive";
+      next.className += " notActive";
       slideIndex = x.length;
       return;
     }
     //reset disable btn
-    next[0].className = next[0].className.replace("notActive", "");
-
+    next.className = next.className.replace("notActive", "");
     // slide thumbnails gallery to front
     if ((slideIndex) > 6) {
       var toHide = (slideIndex - 6);
@@ -69,7 +66,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     if ( ((slideIndex) <= (x.length - 6) && (dots[slideIndex-1]).classList.contains("hide") )) {
       dots[slideIndex-1].classList = ["sliderMiniature"];
     }
-
     // hide all images in gallery
     for (i = 0; i < x.length; i++) {
        x[i].style.display = "none";
@@ -78,7 +74,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     for (i = 0; i < dots.length; i++) {
        dots[i].className = dots[i].className.replace("opacityOff", "");
     }
-
     // show just chosen image from gallery
     x[slideIndex-1].style.display = "block";
     // unfog chosen thumbnail
@@ -87,7 +82,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
 // Display date
-
   var date = new Date();
   document.getElementById("date").innerHTML = date.toDateString();
 
