@@ -43,7 +43,11 @@
     transition: opacity 0.4s;
   }
   .sliderImages {
-    background-color: grey;
+    background: #9d9e9e;
+    background: -moz-linear-gradient(top, #9d9e9e 0%, #9f9f9f 8%, #aaabaa 25%, #c7c7c6 59%, #d3d3d3 77%, #d5d5d5 83%, #d5d5d5 100%);
+    background: -webkit-linear-gradient(top, #9d9e9e 0%, #9f9f9f 8%, #aaabaa 25%, #c7c7c6 59%, #d3d3d3 77%, #d5d5d5 83%, #d5d5d5 100%);
+    background: linear-gradient(to bottom, #9d9e9e 0%, #9f9f9f 8%, #aaabaa 25%, #c7c7c6 59%, #d3d3d3 77%, #d5d5d5 83%, #d5d5d5 100%);
+// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9d9e9e', endColorstr='#d5d5d5',GradientType=0 );
     display: flex;
     justify-content: space-between;
     border: 2px solid white;
