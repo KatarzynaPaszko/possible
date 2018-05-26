@@ -1,0 +1,24 @@
+.aside {
+  background-color: #f2f2f2;
+  height: 100%;
+  width: 100%;
+  & .postExcerpt {
+    padding: 95px 20px 20px 20px;
+  }
+  & .excerptTitle {
+    color: $first-color;
+    text-transform: uppercase;
+    border-top: 2px solid $first-color;
+    width: 70%;
+    padding: 10px 0;
+    font-weight: bold;
+  }
+  & .excerptImg {
+    width: 100%;
+  }
+  & .excerptCnt {
+    color: $first-color;
+    padding: 10px 0;
+  }
+
+}

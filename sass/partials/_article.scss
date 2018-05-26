@@ -1,0 +1,119 @@
+article {
+  background-color: white;
+  height: 100%;
+  padding: 50px 30px;
+}
+.sliderImg {
+  display: none;
+}
+
+main .mainArticle {
+  .mainArticleHeader {
+    font-weight: bold;
+    font-size: 30px;
+  }
+  & p {
+    padding: 10px 0;
+  }
+}
+.slider {
+  .sliderHeader {
+    text-transform: uppercase;
+    margin: 40px 0 0 0;
+    font-weight: bold;
+  }
+  .sliderImg {
+    position: relative;
+    width: 100%;
+    height: 270px;
+    text-align: right;
+    border: 1px solid #c8cfd5;
+    -webkit-box-shadow: 0px 0px 1px 1px rgba(209,201,209,1);
+    -moz-box-shadow: 0px 0px 1px 1px rgba(209,201,209,1);
+    box-shadow: 0px 0px 1px 1px rgba(209,201,209,1);
+    & img {
+      height: 100%;
+      // float: right;
+    }
+
+    .sliderDescription {
+      opacity: 0;
+      transition: opacity 0.4s;
+      background-color: rgba(0,0,0,0.8);
+      color: white;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 8px 20px;
+      text-align: left;
+      & .sliderName {
+        font-weight: bold;
+      }
+      & .sliderPosition {
+        text-transform: uppercase;
+      }
+    }
+
+  }
+  .sliderImg:hover .sliderDescription {
+    opacity: 1;
+    transition: opacity 0.4s;
+  }
+  .sliderImages {
+    background-color: grey;
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid white;
+    -webkit-box-shadow: 0px 0px 2px 1px rgba(209,201,209,1);
+    -moz-box-shadow: 0px 0px 2px 1px rgba(209,201,209,1);
+    box-shadow: 0px 0px 2px 1px rgba(209,201,209,1);
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  .btn {
+    background-color: transparent;
+
+
+  }
+  .indicator {
+    opacity: 0.5;
+  }
+  .sliderMiniature.opacityOff .indicator{
+    opacity: 1;
+  }
+}
+
+.mySlides {display:none}
+.demo {cursor:pointer}
+
+.sliderMiniatures {
+  display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 420px;
+    padding: 20px 0;
+    height: 110px;
+    overflow: hidden;
+}
+.sliderMiniature {
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  margin: 10px 5px;
+  border: 2px solid transparent;
+  & img {
+    height: 60px;
+    object-fit: fill;
+  }
+}
+
+.sliderMiniature.opacityOff,
+.sliderMiniature:hover {
+  border: 2px solid $first-color;
+}
+.sliderMiniature.hide {
+  display: none;
+}
+.btn.notActive {
+  opacity: 0.3;
+}

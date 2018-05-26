@@ -1,0 +1,21 @@
+.footer {
+  background-color: black;
+  color: white;
+  .footerNav {
+    & ul {
+      display: flex;
+      justify-content: space-between;
+      & li {
+        padding: 10px 20px;
+        &:hover a {
+          text-decoration: none;
+          color: $first-color;
+          text-shadow: 0 0 1px $first-color;
+        }
+        & a {
+          color: white;
+        }
+      }
+    }
+  }
+}
